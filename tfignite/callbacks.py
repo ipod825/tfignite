@@ -156,7 +156,7 @@ class ModelArgsSaverLoader(Callback):
         import argparse
         model_parser = argparse.ArgumentParser()
         self._model.__class__.add_parser(model_parser)
-        model_arg_names = vars(model_parser.parse_args()).keys()
+        model_arg_names = vars(model_parser.parse_known_args()[0]).keys()
 
         model_args = {}
         for name in model_arg_names:

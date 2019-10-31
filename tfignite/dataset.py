@@ -16,21 +16,21 @@ class Dataset(tf.data.Dataset):
         pass
 
     @classmethod
-    def build(cls, args, train, batch_size=128, shuffle=True, **kwargs):
+    def build(cls, args, is_training, batch_size=128, shuffle=True, **kwargs):
         raise NotImplementedError
 
     @classmethod
     def create(cls,
                args,
                batch_size=32,
-               train=True,
+               is_training=True,
                prefetch_batch=1,
                shuffle=True,
                cache_in_memory=True,
                **kwargs):
 
         dataset, meta_info = cls.build(args,
-                                       train=train,
+                                       is_training=is_training,
                                        batch_size=batch_size,
                                        shuffle=shuffle)
         dataset = dataset.prefetch(math.floor(prefetch_batch * batch_size))
