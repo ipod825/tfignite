@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['terminate_68',['terminate',['../classtfignite_1_1engine_1_1Engine.html#a948d88335e91ff9ccbb93d1bdf888924',1,'tfignite::engine::Engine']]],
-  ['terminate_5fepoch_69',['terminate_epoch',['../classtfignite_1_1engine_1_1Engine.html#aedb65c4e4b07b9fc343ae73cebcaffa2',1,'tfignite::engine::Engine']]]
+  ['register_71',['register',['../classtfignite_1_1callbacks_1_1Callback.html#a85836ccd9aa5b2c20eaa38b22f9a5e38',1,'tfignite.callbacks.Callback.register()'],['../classtfignite_1_1callbacks_1_1TqdmProgressBar.html#a9b3298aae517a378220d28620de754a3',1,'tfignite.callbacks.TqdmProgressBar.register()'],['../classtfignite_1_1callbacks_1_1Checkpointer.html#acfe30f93c94f34f6885075c2c8d5fae5',1,'tfignite.callbacks.Checkpointer.register()'],['../classtfignite_1_1callbacks_1_1ModelArgsSaverLoader.html#a021c2293cd6f59b1069d6556e4f03d73',1,'tfignite.callbacks.ModelArgsSaverLoader.register()']]],
+  ['register_5fevents_72',['register_events',['../classtfignite_1_1engine_1_1Engine.html#adf9c22ebd440fd1051a87d89c8356321',1,'tfignite::engine::Engine']]],
+  ['remove_5fevent_5fhandler_73',['remove_event_handler',['../classtfignite_1_1engine_1_1Engine.html#a008bed24b84f215b5cac4b0072ab9d2e',1,'tfignite::engine::Engine']]],
+  ['run_74',['run',['../classtfignite_1_1engine_1_1Engine.html#ac4cff1d57a74b01a3d576b9f0f8041d6',1,'tfignite::engine::Engine']]]
 ];

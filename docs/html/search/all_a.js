@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['on_22',['on',['../classtfignite_1_1engine_1_1Engine.html#a9e09ea756735133dac7044611927a11a',1,'tfignite::engine::Engine']]]
+  ['model_22',['Model',['../classtfignite_1_1model_1_1Model.html',1,'tfignite::model']]],
+  ['modelargssaverloader_23',['ModelArgsSaverLoader',['../classtfignite_1_1callbacks_1_1ModelArgsSaverLoader.html',1,'tfignite::callbacks']]]
 ];

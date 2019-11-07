@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>tfignite: Main Page</title>
+<title>tfignite: Tfignite</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -85,17 +85,32 @@ $(document).ready(function(){initNavTree('index.html','');});
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">tfignite Documentation</div>  </div>
+<div class="title">Tfignite </div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p>Tfignite is a project that stems from <a href="https://github.com/pytorch/ignite">ignite</a>. Ignite is a high-level library to help with training neural networks in PyTorch, while Tfignite bares similar design / api and is designed dedicated to tensorflow 2.0.</p>
+<p>For the full API reference, read the <a href="https://ipod825.github.io/tfignite/docs/html/index.html">online documentation</a>. For example usage, check the <a href="https://github.com/ipod825/tfignite/tree/master/examples">examples</a> directory.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Why tfignite?</h1>
+<p>Tfignite separates training/evaluation loop from model/dataset computation graph. This makes a single training/evaluation script highly portable to different project and developers only need to focus on how to build the model and dataset for their tasks. The difference from <a href="https://keras.io">Keras</a> is that the training/evaluation loop is not part of Model's APIs; instead, developers define model forward pass function, which is then injected into the loop defined by an <code>Engine</code>. Users can also register event handlers in different phases of a training/evaluation loop (for e.g. <code>ITERATION_STARTED</code>).</p>
+<p>Apart from the aforementioned separation of model forward pass function and boilerplate loop in <code>Engine</code> (<a href="https://github.com/pytorch/ignite">ignite</a> has full credits for this). Tfignite further reduce boilerplate code by defining the <code>Model</code>, <code>Dataset</code>, <code>Callback</code>, <code>ArgumentParser</code> interfaces:</p><ol type="1">
+<li><code>Model</code>: Defines the <code>create_trainer</code> and the <code>create_evaluator</code> function, both of which injects a forward pass function to an <code>Engine</code> and returns it to the training/evaluation script.</li>
+<li><code>Dataset</code>: Defines a unified interface <code>Dataset.create</code> wrapping over <code>tf.data.Dataset</code>.</li>
+<li><code>Callback</code>: Defines a interface to group related <code>Engine</code> event handlers in different phases. For example, <code>Checkpointer</code> loads the checkpoint at the beginning of training and stores the checkpoint on <code>EPOCH_COMPLETED</code>.</li>
+<li><code>ArgumentParser</code>: Inherited from <code>argparse.ArgumentParser</code>, the parser pass itself to the Model and Dataset classes for parsing Model-specific and Dataset-specific arguments. This further separates the Model development and the training/evaluation script.</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Installation</h1>
+<div class="fragment"><div class="line">pip install tfignite</div>
+</div><!-- fragment --> </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sun Oct 20 2019 05:36:24 for tfignite by
+    <li class="footer">Generated on Thu Nov 7 2019 10:27:16 for tfignite by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
   </ul>

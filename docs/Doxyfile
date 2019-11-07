@@ -2286,11 +2286,12 @@ QUIET             = YES
 WARNINGS          = YES
 IMAGE_PATH        = .
 RECURSIVE         = YES
-INPUT                  = ../tfignite
+INPUT                  = ../tfignite ../README.md
 USE_MDFILE_AS_MAINPAGE = ../README.md
 FILE_PATTERNS          = *.py
 EXAMPLE_PATH      = ../examples
-INPUT_FILTER = "doxypypy"
+FILTER_PATTERNS= *.py=doxypypy \
+                 *.md=
 
 GENERATE_TREEVIEW = YES
 EXTRACT_ALL       = NO

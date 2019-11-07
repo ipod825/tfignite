@@ -23,6 +23,8 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "tfignite", "index.html", [
+    [ "Why tfignite?", "index.html#autotoc_md1", null ],
+    [ "Installation", "index.html#autotoc_md2", null ],
     [ "Packages", "namespaces.html", [
       [ "Packages", "namespaces.html", "namespaces_dup" ]
     ] ],

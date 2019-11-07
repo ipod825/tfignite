@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['has_5fevent_5fhandler_60',['has_event_handler',['../classtfignite_1_1engine_1_1Engine.html#af3799243ed6a50219d8848a07b6104b7',1,'tfignite::engine::Engine']]]
+  ['gen_5fckpt_5fobjs_66',['gen_ckpt_objs',['../classtfignite_1_1model_1_1Model.html#a6719545796c5cecfed1921f8791c9076',1,'tfignite::model::Model']]]
 ];

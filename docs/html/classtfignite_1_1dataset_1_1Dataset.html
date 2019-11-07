@@ -87,6 +87,7 @@ $(document).ready(function(){initNavTree('classtfignite_1_1dataset_1_1Dataset.ht
 
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classtfignite_1_1dataset_1_1Dataset-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">tfignite.dataset.Dataset Class Reference</div>  </div>
@@ -98,13 +99,201 @@ Inheritance diagram for tfignite.dataset.Dataset:</div>
  <div class="center">
   <img src="classtfignite_1_1dataset_1_1Dataset.png" alt=""/>
  </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a75c47c7ad9886f61329b6c017dd05f10"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtfignite_1_1dataset_1_1Dataset.html#a75c47c7ad9886f61329b6c017dd05f10">add_parser</a> (cls, parser)</td></tr>
+<tr class="memdesc:a75c47c7ad9886f61329b6c017dd05f10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add dataset specific arguments to command line arguments.  <a href="classtfignite_1_1dataset_1_1Dataset.html#a75c47c7ad9886f61329b6c017dd05f10">More...</a><br /></td></tr>
+<tr class="separator:a75c47c7ad9886f61329b6c017dd05f10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ac45bdf819e96c3c3a2250ad00bea4f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtfignite_1_1dataset_1_1Dataset.html#a2ac45bdf819e96c3c3a2250ad00bea4f">build</a> (cls, args, is_training, batch_size=128, shuffle=True, **kwargs)</td></tr>
+<tr class="memdesc:a2ac45bdf819e96c3c3a2250ad00bea4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subclass inheriting <code><a class="el" href="classtfignite_1_1dataset_1_1Dataset.html">Dataset</a></code> should implement this function to return a <code>tf.data.Datset</code>.  <a href="classtfignite_1_1dataset_1_1Dataset.html#a2ac45bdf819e96c3c3a2250ad00bea4f">More...</a><br /></td></tr>
+<tr class="separator:a2ac45bdf819e96c3c3a2250ad00bea4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6e504957a655200a23b55897135afdb"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtfignite_1_1dataset_1_1Dataset.html#af6e504957a655200a23b55897135afdb">create</a> (cls, args, batch_size=32, is_training=True, prefetch_batch=1, shuffle=True, **kwargs)</td></tr>
+<tr class="memdesc:af6e504957a655200a23b55897135afdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unified interface for different dataset.  <a href="classtfignite_1_1dataset_1_1Dataset.html#af6e504957a655200a23b55897135afdb">More...</a><br /></td></tr>
+<tr class="separator:af6e504957a655200a23b55897135afdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a75c47c7ad9886f61329b6c017dd05f10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75c47c7ad9886f61329b6c017dd05f10">&#9670;&nbsp;</a></span>add_parser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def tfignite.dataset.Dataset.add_parser </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cls</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>parser</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add dataset specific arguments to command line arguments. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parser</td><td><code>argparse.ArgumentParser</code>. The argument parser.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function is used by <code><a class="el" href="classtfignite_1_1parser_1_1ArgumentParser.html">tfignite.parser.ArgumentParser</a></code>. It frees users from adding dataset-specific arguments to <code>argparse.ArgumentParser</code> in the training/evaluation script. </p>
+
+</div>
+</div>
+<a id="a2ac45bdf819e96c3c3a2250ad00bea4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ac45bdf819e96c3c3a2250ad00bea4f">&#9670;&nbsp;</a></span>build()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def tfignite.dataset.Dataset.build </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cls</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>is_training</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>batch_size</em> = <code>128</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>shuffle</em> = <code>True</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">**&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Subclass inheriting <code><a class="el" href="classtfignite_1_1dataset_1_1Dataset.html">Dataset</a></code> should implement this function to return a <code>tf.data.Datset</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>argparse.Namespace. The argument to the dataset. </td></tr>
+    <tr><td class="paramname">is_training</td><td>boolean. Indicating whether to load training/tesing data split. </td></tr>
+    <tr><td class="paramname">batch_size</td><td>int. The batch size. </td></tr>
+    <tr><td class="paramname">shuffle</td><td>boolean. Whether to shuffle the dataset. </td></tr>
+    <tr><td class="paramname">kwargs</td><td>dict. Optional arguments for specific dataset. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>tuple of (<code>tf.data.Dataset</code>, dict): The dict serves as meta-information for model to add additional arguments, for e.g. the image height and width. </dd></dl>
+
+</div>
+</div>
+<a id="af6e504957a655200a23b55897135afdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6e504957a655200a23b55897135afdb">&#9670;&nbsp;</a></span>create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def tfignite.dataset.Dataset.create </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cls</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>batch_size</em> = <code>32</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>is_training</em> = <code>True</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>prefetch_batch</em> = <code>1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>shuffle</em> = <code>True</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">**&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The unified interface for different dataset. </p>
+<p>This function delegates the real construction of the dataset to <code><a class="el" href="classtfignite_1_1dataset_1_1Dataset.html#a2ac45bdf819e96c3c3a2250ad00bea4f" title="Subclass inheriting Dataset should implement this function to return a tf.data.Datset.">Dataset.build</a></code>, while keeping some common behaviors such as prefetching. Also, we require the meta-information returned by <code><a class="el" href="classtfignite_1_1dataset_1_1Dataset.html#a2ac45bdf819e96c3c3a2250ad00bea4f" title="Subclass inheriting Dataset should implement this function to return a tf.data.Datset.">Dataset.build</a></code> contains <code>num_examples</code> so that we can calculate number of batches. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>argparse.Namespace. The argument to the dataset. </td></tr>
+    <tr><td class="paramname">batch_size</td><td>int. The batch size. </td></tr>
+    <tr><td class="paramname">is_training</td><td>boolean. Indicating whether to load training/tesing data split. </td></tr>
+    <tr><td class="paramname">prefetch_batch</td><td>int. Number of batch to be prefectched. </td></tr>
+    <tr><td class="paramname">shuffle</td><td>boolean. Whether to shuffle the dataset. </td></tr>
+    <tr><td class="paramname">kwargs</td><td>dict. Optional arguments for specific dataset. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>tuple of (<code>tf.data.Dataset</code>, dict): The dict serves as meta-information for model to add additional arguments, for e.g. the image height and width. </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tfignite</b></li><li class="navelem"><b>dataset</b></li><li class="navelem"><a class="el" href="classtfignite_1_1dataset_1_1Dataset.html">Dataset</a></li>
-    <li class="footer">Generated on Sun Oct 20 2019 05:36:24 for tfignite by
+    <li class="navelem"><b>tfignite</b></li><li class="navelem"><a class="el" href="namespacetfignite_1_1dataset.html">dataset</a></li><li class="navelem"><a class="el" href="classtfignite_1_1dataset_1_1Dataset.html">Dataset</a></li>
+    <li class="footer">Generated on Thu Nov 7 2019 10:27:16 for tfignite by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
   </ul>
