@@ -40,8 +40,7 @@ class Model(layers.Layer):
         """ Add model specific arguments to command line arguments.
         @param parser: argparse.ArgumentParser. The argument parser.
 
-        This function is used by
-        [tfignite.ArgumentParser](tfignite.parser.ArgumentParser). It frees
+        This function is used by `tfignite.parser.ArgumentParser`. It frees
         users from adding model-specific arguments to `argparse.ArgumentParser`
         in training/evaluation script.
 
