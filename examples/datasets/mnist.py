@@ -6,9 +6,9 @@ from tfignite import Dataset
 
 class MNIST(Dataset):
     @classmethod
-    def build(cls, args, train, batch_size=128, shuffle=True, **kwargs):
+    def build(cls, args, is_training, batch_size=128, shuffle=True, **kwargs):
 
-        if train:
+        if is_training:
             dataset = tfds.load(name="mnist", split=tfds.Split.TRAIN)
             num_examples = 55000
         else:

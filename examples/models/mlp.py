@@ -83,7 +83,6 @@ class MLPModel(Model):
         evaluator = Engine(evaluate)
 
         @evaluator.on(Events.EPOCH_COMPLETED)
-        # @tf.function
         def summary_per_epoch(engine):
             tf.summary.scalar('testing/acc', acc.result(), engine.iteration)
             print(f'Accuracy: {acc.result()}')

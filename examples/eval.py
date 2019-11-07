@@ -22,6 +22,10 @@ def parse_args():
     parser.add_argument('--root_dir',
                         default='/tmp/mnist_example',
                         help='Directory where to store checkpointslogs.')
+    parser.add_argument('--eager',
+                        action='store_true',
+                        default=False,
+                        help='Whether to run in eager mode.')
 
     return parser.parse_args()
 
@@ -30,6 +34,8 @@ if __name__ == "__main__":
     os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
     args = parse_args()
+    tf.config.experimental_run_functions_eagerly(args.eager)
+
     dataset, meta_info = Dataset.create(args,
                                         batch_size=args.batch_size,
                                         train=False)
