@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(name='tfignite',
-      version='0.0.3',
+      version='0.0.4',
       description='Hight level training routine for tensorflow.',
       long_description=long_description,
       long_description_content_type="text/markdown",
