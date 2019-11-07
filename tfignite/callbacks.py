@@ -3,6 +3,8 @@
 Built-in callbacks.
 '''
 
+from pathlib import Path
+
 from . import util
 from .engine import Events
 
@@ -150,7 +152,8 @@ class ModelArgsSaverLoader(Callback):
 
         self._model = model
         self._is_training = is_training
-        self._save_dir = save_dir
+        self._save_dir = Path(save_dir).expanduser()
+        self._save_dir.mkdir(parents=True, exist_ok=True)
 
     def _get_model_args(self):
         import argparse
@@ -164,47 +167,41 @@ class ModelArgsSaverLoader(Callback):
         return model_args
 
     def register(self, engine):
-        from pathlib import Path
         import json
 
         model_args = self._get_model_args()
-        util.makedirp(self._save_dir)
-        model_args_file = f'{self._save_dir}/model_args.json'
+        model_args_file = self._save_dir / 'model_args.json'
 
         if self._is_training:
-            if Path(model_args_file).is_file():
-                with open(model_args_file, 'r') as f:
-                    saved_args = json.load(f)
-                    assert len(model_args) == len(saved_args), (
-                        "Number of model arguments mismatch. "
-                        "Saved:\n {}\n Arguments:\n {}\n".format(
-                            list(saved_args.keys()), list(model_args.keys())))
+            if model_args_file.is_file():
+                saved_args = json.loads(model_args_file.read_text())
+                assert len(model_args) == len(saved_args), (
+                    "Number of model arguments mismatch. "
+                    "Saved:\n {}\n Arguments:\n {}\n".format(
+                        list(saved_args.keys()), list(model_args.keys())))
 
-                    for key, value in saved_args.items():
-                        if model_args[key] != value:
-                            util.stop_if_no(
-                                "Previous run of this model version use"
-                                " different arguments. Use the saved argument"
-                                "  and proceed to train anyway? By pressing y"
-                                " checkpoint might be loaded. By pressing n "
-                                " you might want to delete the old model args"
-                                " file.\nPrevious saved arguments:\n{}\n"
-                                " Current Arguments:\n{}".format(
-                                    saved_args, model_args))
-                            break
-            else:
-                if len(model_args) != 0:
-                    with open(model_args_file, 'w') as f:
-                        json.dump(model_args, f)
+                for key, value in saved_args.items():
+                    if model_args[key] != value:
+                        util.stop_if_no(
+                            "Previous run of this model version use different"
+                            " arguments. Use the saved argument and proceed to"
+                            " train anyway? By pressing ycheckpoint might be"
+                            " loaded. By pressing n you might want to delete "
+                            " the old model argsfile.\nPrevious saved "
+                            " arguments:\n{}\n Current Arguments:\n{}".format(
+                                saved_args, model_args))
+                        break
+            elif len(model_args) != 0:
+                model_args_file.write_text(json.dumps(model_args))
         else:
-            with open(model_args_file, 'r') as f:
-                saved_args = json.load(f)
+            if model_args_file.is_file():
+                saved_args = json.loads(model_args_file.read_text())
 
-            for key, value in saved_args.items():
-                if model_args[key] != value:
-                    util.stop_if_no(
-                        f"You specify\n{key} = {model_args[key]} which "
-                        f"is different from the saved value: {value}.\nBy "
-                        f"pressing y {key} = {model_args[key]} will be "
-                        f"used. \nBy pressing n you might want to delete {key}"
-                        f" from you command line.")
+                for key, value in saved_args.items():
+                    if model_args[key] != value:
+                        util.stop_if_no(
+                            f"You specify\n{key} = {model_args[key]} which "
+                            f"is different from the saved value: {value}.\nBy "
+                            f"pressing y {key} = {model_args[key]} will be "
+                            f"used. \nBy pressing n you might want to delete"
+                            f"  {key} from you command line.")
